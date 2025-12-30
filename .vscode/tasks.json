@@ -1,0 +1,41 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build Music Player",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-std=c++17",
+                "-Wall",
+                "-Wextra",
+                "-g",
+                "-I", "${workspaceFolder}/musicplayer/include",
+                "${workspaceFolder}/musicplayer/src/main.cpp",
+                "-o", "${workspaceFolder}/musicplayer/musicplayer.exe",
+                "-lwinmm"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/musicplayer"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"],
+            "detail": "Build music player with g++ (C++17)"
+        },
+        {
+            "label": "Clean Build",
+            "type": "shell",
+            "command": "del",
+            "args": [
+                "${workspaceFolder}/musicplayer/musicplayer.exe"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/musicplayer"
+            },
+            "problemMatcher": []
+        }
+    ]
+}
